@@ -66,7 +66,7 @@ gdb rev
 disass main
 ```
 On constate que notre scanf se trouve à la 346ème instruction après notre main.  
-![Screenshot](img/capture1.png)
+![Screenshot](img/capture1.png)  
 On place donc notre breakpoint et on lance le programme :  
 ```bash
 b *main+346
