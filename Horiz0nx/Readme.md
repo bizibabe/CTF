@@ -1,7 +1,7 @@
 # CTF - Reverse - Random Password [150 pts]
-## GDB version rapide
+## Méthode avec GDB
 
-Au préalabe on récupère le pseudo-code avec Ghidra :
+Au préalabe on récupère le pseudo-code avec __Ghidra__ :
 
 ```c
 int main(int argc,char **argv)
@@ -58,21 +58,22 @@ int main(int argc,char **argv)
   return 0;
 }
 ```
-On constate que le résultat de la variable flag est mis en mémoire bien avant de comparer nos valeurs.  
-Donc si on met un point d'arret sur notre scanf nous pourrons récupérer le flag directement.  
+On constate que le résultat de la variable __flag__ est mis en mémoire bien avant de rentrer notre valeur.  
+Donc si on met un point d'arrêt sur notre __scanf__ nous pourrons récupérer le flag directement.  
+Lancement du binaire avec __GDB__ et on désassemble main() :
 
 ```bash
 $ gdb rev
 (gdb) disass main
 ```
-On constate que notre scanf se trouve à la 346ème instruction après notre main.  
+On constate que notre scanf se trouve à la 346ème instruction après notre main() :   
 ![Screenshot](img/capture1.png)  
 On place donc notre breakpoint et on lance le programme :  
 ```bash
 (gdb) b *main+346
 (gdb) r
 ```
-Nous avons plus qu'à afficher les différentes valeurs de variables locales :  
+On a plus qu'à afficher le contenu des variables locales :  
 ```bash
 (gdb) info locals
 ```
