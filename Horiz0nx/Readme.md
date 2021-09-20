@@ -62,13 +62,18 @@ On constate que le résultat de la variable flag est mis en mémoire bien avant 
 Donc si on met un point d'arret sur notre scanf nous pourrons récupérer le flag directement.  
 
 ```bash
-gdb rev
-disass main
+$ gdb rev
+(gdb) disass main
 ```
 On constate que notre scanf se trouve à la 346ème instruction après notre main.  
 ![Screenshot](img/capture1.png)  
 On place donc notre breakpoint et on lance le programme :  
 ```bash
-b *main+346
-r
+(gdb) b *main+346
+(gdb) r
 ```
+Nous avons plus qu'à afficher les différentes valeurs de variables locales :  
+```bash
+(gdb) info locals
+```
+![Screenshot](img/capture2.png)  
