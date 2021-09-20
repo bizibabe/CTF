@@ -58,16 +58,16 @@ int main(int argc,char **argv)
   return 0;
 }
 ```
-On constate que le résultat de la variable flag est mis en mémoire bien avant de comparer nos valeurs.
-Donc si on met un point d'arret sur notre scanf nous pourrons récupérer le flag directement.
+On constate que le résultat de la variable flag est mis en mémoire bien avant de comparer nos valeurs.  
+Donc si on met un point d'arret sur notre scanf nous pourrons récupérer le flag directement.  
 
 ```bash
 gdb rev
 disass main
 ```
-On constate que notre scanf se trouve à la 346ème instruction après notre main.
+On constate que notre scanf se trouve à la 346ème instruction après notre main.  
 ![Screenshot](img/capture1.png)
-On place donc notre breakpoint et on lance le programme :
+On place donc notre breakpoint et on lance le programme :  
 ```bash
 b *main+346
 r
