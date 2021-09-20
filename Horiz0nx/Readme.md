@@ -60,7 +60,8 @@ int main(int argc,char **argv)
 ```
 On constate que le résultat de la variable __flag__ est mis en mémoire bien avant de rentrer notre valeur.  
 Donc si on met un point d'arrêt sur notre __scanf__ nous pourrons récupérer le flag directement.  
-Lancement du binaire avec __GDB__ et on désassemble main() :
+
+On lance le binaire avec __GDB__ et on désassemble la fonction main() :
 
 ```bash
 $ gdb rev
