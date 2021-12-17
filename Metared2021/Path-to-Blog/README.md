@@ -1,6 +1,6 @@
 # CTF - Web - Path to Blog / [408 pts]
 
-![Screenshot](img/Capture.jpg)  
+![Screenshot](img/Capture.JSP)  
  
 ```bash
 curl -I 'http://ctf-metared-2021.ua.pt:24202'
